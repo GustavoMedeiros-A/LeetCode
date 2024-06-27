@@ -9,12 +9,12 @@ class Solution {
     }
 
     // This will return how many house should i go
-    private int gcd(int int1, int int2) {
-        while (int2 != 0) {
-            int temp = int2;
-            int2 = int1 % int2;
-            int1 = temp;
+    private int gcd(int a, int b) {
+        while (b != 0) {
+            int remainder = a % b;
+            a = b;
+            b = remainder;
         }
-        return int1;
+        return a;
     }
 }
