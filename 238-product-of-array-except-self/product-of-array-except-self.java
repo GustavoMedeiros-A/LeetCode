@@ -8,7 +8,7 @@ int length = nums.length;
         int[] result = new int[length];
 
         leftProduct[0] = 1;
-        System.out.println(leftProduct + "first left product");
+
         for (int i = 1; i < length; i++) {
             leftProduct[i] = leftProduct[i - 1] * nums[i - 1];
             System.out.println(String.format("leftProduct[%d] = %d", i, leftProduct[i]));
