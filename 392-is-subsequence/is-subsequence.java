@@ -8,6 +8,9 @@
 
             if (pointerS < s.length() && t.charAt(pointerT) == s.charAt(pointerS)) {
                 pointerS++;
+                if (pointerS == s.length()) {
+                    return true;
+                }
             }
 
             pointerT++;
@@ -15,5 +18,5 @@
 
         return pointerS == s.length();
         }
-        
+
     }
