@@ -2,8 +2,6 @@ class Solution {
     public String reverseWords(String s) {
        String[] wordsArray = s.trim().split("\\s+");
 
-        System.out.println(Arrays.toString(wordsArray));
-
         StringBuilder reversed = new StringBuilder();
 
         for (int i = wordsArray.length; i > 0; i--) {
