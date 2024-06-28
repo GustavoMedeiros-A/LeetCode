@@ -16,7 +16,7 @@
             pointerT++;
         }
 
-        return pointerS == s.length();
+        return false;
         }
 
     }
