@@ -1,5 +1,10 @@
 class Solution {
      public String reverseVowels(String word) {
+
+        // Hash mapping is more fast
+        // After a careful research i find a site
+        // That tell that hashMap have better performance
+        // https://www.baeldung.com/java-treemap-vs-hashmap#:~:text=HashMap%2C%20being%20a%20hashtable%2Dbased,significantly%20faster%20than%20a%20TreeMap.
         Set<Character> vowels = new HashSet<>();
         for (char c : "aeiouAEIOU".toCharArray()) {
             vowels.add(c);
