@@ -1,14 +1,10 @@
 class Solution {
-    public boolean uniqueOccurrences(int[] arr) {
+       public boolean uniqueOccurrences(int[] arr) {
 
         HashMap<Integer, Integer> integerMap = new HashMap<>();
 
         for (int num : arr) {
-            if(integerMap.containsKey(num)) {
-                integerMap.put(num, integerMap.get(num) + 1); 
-            } else {
-                integerMap.put(num, 1); // 1 is the first occurence
-            }
+            integerMap.compute(num, (key, value) -> (value == null)  ? 1 : value + 1);
         }
         HashSet<Integer> seenValues = new HashSet<>();
 
@@ -19,5 +15,4 @@ class Solution {
         }
         return true;
     }
-
 }
