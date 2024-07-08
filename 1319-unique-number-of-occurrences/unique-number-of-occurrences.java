@@ -4,7 +4,7 @@ class Solution {
         HashMap<Integer, Integer> integerMap = new HashMap<>();
 
         for (int num : arr) {
-            integerMap.compute(num, (key, value) -> (value == null)  ? 1 : value + 1);
+             integerMap.put(num, integerMap.getOrDefault(num, 0) + 1);
         }
         HashSet<Integer> seenValues = new HashSet<>();
 
