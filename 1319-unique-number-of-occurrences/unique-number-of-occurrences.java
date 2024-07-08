@@ -5,7 +5,7 @@ class Solution {
 
         for (int num : arr) {
             if(integerMap.containsKey(num)) {
-                integerMap.put(num, integerMap.get(num) + 1); // here increment the occurrences of hashMap
+                integerMap.put(num, integerMap.get(num) + 1); 
             } else {
                 integerMap.put(num, 1); // 1 is the first occurence
             }
@@ -13,9 +13,7 @@ class Solution {
         HashSet<Integer> seenValues = new HashSet<>();
 
         for(int values : integerMap.values()) {
-            if(!seenValues.contains(values)) {
-                seenValues.add(values);
-            } else {
+            if(!seenValues.add(values)) {
                 return false;
             }
         }
