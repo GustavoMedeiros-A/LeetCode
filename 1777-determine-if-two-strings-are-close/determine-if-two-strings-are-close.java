@@ -5,15 +5,21 @@ class Solution {
             return false;
         }
 
+
+        int[] freq1 = new int[26];
+        int[] freq2 = new int[26];
+
         // Set is a collection that contains no duplicate elements.
         Set<Character> set1 = new HashSet<Character>();
         Set<Character> set2 = new HashSet<Character>();
 
         for (char c : word1.toCharArray()) {
+            freq1[c - 'a']++;
             set1.add(c);
         }
 
         for (char c : word2.toCharArray()) {
+            freq2[c - 'a']++;
             set2.add(c);
         }
 
@@ -21,24 +27,17 @@ class Solution {
             return false;
         }
 
-        // Creare frequency MAP to store the frequency of the letters
-        HashMap<Character, Integer> freq1 = new HashMap<Character, Integer>();
-        HashMap<Character, Integer> freq2 = new HashMap<Character, Integer>();
 
-        for (char c : word1.toCharArray()) {
-            freq1.put(c, freq1.getOrDefault(c, 0) + 1);
+        Arrays.sort(freq1);
+        Arrays.sort(freq2);
+
+        for (int i = 0; i < 26; i++) {
+            if(freq1[i] != freq2[i]) {
+                return false;
+            }
         }
-        for (char c : word2.toCharArray()) {
-            freq2.put(c, freq2.getOrDefault(c, 0) + 1);
-        }
 
-        List<Integer> freq1List = new ArrayList<>(freq1.values());
-        List<Integer> freq2List = new ArrayList<>(freq2.values());
-
-        Collections.sort(freq1List);
-        Collections.sort(freq2List);
-
-        return freq1List.equals(freq2List);
+        return true;
     }
 }
 
