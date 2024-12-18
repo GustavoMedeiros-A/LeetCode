@@ -15,24 +15,26 @@
  */
 class Solution {
  public TreeNode sortedArrayToBST(final int[] nums) {
-        if (nums == null || nums.length == 0) {
+        if(nums.length==0 || nums == null) {
             return null;
         }
 
-
         return recursiveHelper(nums, 0, nums.length);
+
     }
 
     private TreeNode recursiveHelper(final int[] nums, final int start, final int end) {
-        if (start >= end) {
+        if(start >= end) {
             return null;
         }
+
         final int middle = (start + end) / 2;
         final TreeNode node = new TreeNode(nums[middle]);
-        node.left = recursiveHelper(nums, start, middle);
         node.right = recursiveHelper(nums, middle + 1, end);
-        
+        node.left = recursiveHelper(nums, start, middle);
+
         return node;
+
     }
 
 }
