@@ -35,13 +35,4 @@ class Solution {
         return node;
     }
 
-    public static int[] sliceArray(final int[] array, final int start, final int end) {
-        final int[] result = new int[end - start];
-
-        for(int i = start; i < end; i++) {
-            result[i - start] = array[i];
-        }
-
-        return result;
-    }
 }
